@@ -1,8 +1,8 @@
 <section id="proyectos" class="py-10">
   <h2 class="text-4xl text-center font-bold mb-10">Proyectos Recientes</h2>
   <!--Proyecto 1 -->
-  <div class="card md:card-side bg-base-200 max-md:shadow-xl rounded-none max-md:mb-6 h-[28rem]">
-    <div class="w-full md:w-[60%] relative overflow-hidden h-full">
+  <div class="card md:card-side bg-base-200 rounded-none max-md:mb-6 h-[48rem] sm:h-[38rem] md:h-[32rem] lg:h-[24rem]">
+    <div class="w-full md:w-[55%] relative overflow-hidden h-full">
       <div
         class="carousel-item-custom absolute inset-0 opacity-100 transition-opacity duration-1000 h-full"
       >
@@ -28,22 +28,22 @@
         />
       </div>
     </div>
-    <div class="card-body">
-      <h2 class="card-title">New album is released!</h2>
-      <p>Click the button to listen on Spotiwhy app.</p>
+    <div class="card-body md:w-[45%]">
+      <h2 class="card-title text-3xl text-pretty">Proyecto de lujo en Colonia Escalon - San Salvador</h2>
+      <p class="text-pretty text-xl">Este proyecto destaca por su enfoque en elegancia y durabilidad.Ubicado en una de las zonas más exclusivas de San Salvador, el diseño del techo combina materiales de alta calidad con acabados modernos, garantizando una estética sofisticada y una funcionalidad excepcional. Ideal para quienes buscan elevar el estilo y valor de su propiedad.</p>
     </div>
   </div>
   
 
   <!--Proyecto 2 -->
   <div
-    class="card flex-col-reverse md:card-side bg-base-200 max-md:shadow-xl rounded-none max-md:mb-6 h-[28rem]"
+    class="card flex-col-reverse md:card-side bg-base-200 rounded-none max-md:mb-6 h-[28rem]"
   >
-    <div class="card-body">
+    <div class="card-body md:w-[45%]">
       <h2 class="card-title">New album is released!</h2>
       <p>Click the button to listen on Spotiwhy app.</p>
     </div>
-    <figure class="w-full md:w-[60%]">
+    <figure class="w-full md:w-[55%]">
       <img
         src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
         alt="Album"
@@ -53,8 +53,8 @@
   </div>
 
   <!--Proyecto 3 -->
-  <div class="card md:card-side bg-base-200 max-md:shadow-xl rounded-none max-md:mb-6 h-[28rem]">
-    <div class="w-full md:w-[60%] relative overflow-hidden h-full">
+  <div class="card md:card-side bg-base-200 rounded-none max-md:mb-6 h-[28rem]">
+    <div class="w-full md:w-[55%] relative overflow-hidden h-full">
       <div
         class="carousel-item-custom-2 absolute inset-0 opacity-100 transition-opacity duration-1000 h-full"
       >
@@ -80,7 +80,7 @@
         />
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-body md:w-[45%]">
       <h2 class="card-title">New album is released!</h2>
       <p>Click the button to listen on Spotiwhy app.</p>
     </div>
@@ -110,16 +110,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showNextImage = () => {
-    currentIndex = (currentIndex + 1) % items.length; // Avanza al siguiente índice, reiniciando al llegar al final
+    currentIndex = (currentIndex + 1) % items.length;
     updateVisibility(items, currentIndex);
     updateVisibility(items2, currentIndex);
   };
 
-  // Inicializar visibilidad
   updateVisibility(items, currentIndex);
   updateVisibility(items2, currentIndex);
 
-  // Configurar intervalo para cambiar imágenes
   setInterval(showNextImage, 3000);
 });
 
