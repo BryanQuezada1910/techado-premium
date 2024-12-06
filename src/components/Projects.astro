@@ -1,0 +1,126 @@
+<section id="proyectos" class="py-10">
+  <h2 class="text-4xl text-center font-bold mb-10">Proyectos Recientes</h2>
+  <!--Proyecto 1 -->
+  <div class="card md:card-side bg-base-200 max-md:shadow-xl rounded-none max-md:mb-6 h-[28rem]">
+    <div class="w-full md:w-[60%] relative overflow-hidden h-full">
+      <div
+        class="carousel-item-custom absolute inset-0 opacity-100 transition-opacity duration-1000 h-full"
+      >
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        class="carousel-item-custom absolute inset-0 opacity-0 transition-opacity duration-1000 h-full"
+      >
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        class="carousel-item-custom absolute inset-0 opacity-0 transition-opacity duration-1000 h-full"
+      >
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">New album is released!</h2>
+      <p>Click the button to listen on Spotiwhy app.</p>
+    </div>
+  </div>
+  
+
+  <!--Proyecto 2 -->
+  <div
+    class="card flex-col-reverse md:card-side bg-base-200 max-md:shadow-xl rounded-none max-md:mb-6 h-[28rem]"
+  >
+    <div class="card-body">
+      <h2 class="card-title">New album is released!</h2>
+      <p>Click the button to listen on Spotiwhy app.</p>
+    </div>
+    <figure class="w-full md:w-[60%]">
+      <img
+        src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+        alt="Album"
+        class="w-full h-full object-cover"
+      />
+    </figure>
+  </div>
+
+  <!--Proyecto 3 -->
+  <div class="card md:card-side bg-base-200 max-md:shadow-xl rounded-none max-md:mb-6 h-[28rem]">
+    <div class="w-full md:w-[60%] relative overflow-hidden h-full">
+      <div
+        class="carousel-item-custom-2 absolute inset-0 opacity-100 transition-opacity duration-1000 h-full"
+      >
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        class="carousel-item-custom-2 absolute inset-0 opacity-0 transition-opacity duration-1000 h-full"
+      >
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        class="carousel-item-custom-2 absolute inset-0 opacity-0 transition-opacity duration-1000 h-full"
+      >
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">New album is released!</h2>
+      <p>Click the button to listen on Spotiwhy app.</p>
+    </div>
+  </div>
+  
+  <div class="flex justify-center mt-10">
+    <a href="#proyectos" class="btn btn-secondary btn-outline">Ver más proyectos</a>
+  </div>
+</section>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".carousel-item-custom");
+  const items2 = document.querySelectorAll(".carousel-item-custom-2");
+  let currentIndex = 0;
+
+  const updateVisibility = (elements, indexToShow) => {
+    elements.forEach((el, index) => {
+      if (index === indexToShow) {
+        el.classList.remove("opacity-0");
+        el.classList.add("opacity-100");
+      } else {
+        el.classList.remove("opacity-100");
+        el.classList.add("opacity-0");
+      }
+    });
+  };
+
+  const showNextImage = () => {
+    currentIndex = (currentIndex + 1) % items.length; // Avanza al siguiente índice, reiniciando al llegar al final
+    updateVisibility(items, currentIndex);
+    updateVisibility(items2, currentIndex);
+  };
+
+  // Inicializar visibilidad
+  updateVisibility(items, currentIndex);
+  updateVisibility(items2, currentIndex);
+
+  // Configurar intervalo para cambiar imágenes
+  setInterval(showNextImage, 3000);
+});
+
+</script>
