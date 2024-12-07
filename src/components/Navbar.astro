@@ -34,11 +34,7 @@
           <li>
             <label class="swap swap-rotate">
               <!-- this hidden checkbox controls the state -->
-              <input
-                type="checkbox"
-                class="theme-controller"
-                value="mytheme"
-              />
+              <input type="checkbox" class="theme-controller" value="mytheme" />
 
               <!-- sun icon -->
               <svg
@@ -65,7 +61,13 @@
           </li>
         </ul>
       </div>
-      <a href="/" class="btn btn-ghost text-xl">Altura Luxe</a>
+      <a href="/"
+        ><img
+          src="/logo/altura-luxe-logo.png"
+          class="h-8 w-auto"
+          alt="Logo"
+        /></a
+      >
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 flex items-center">
@@ -82,7 +84,7 @@
         <li>
           <label class="swap swap-rotate">
             <!-- this hidden checkbox controls the state -->
-            <input type="checkbox" class="theme-controller" value="mytheme"/>
+            <input type="checkbox" class="theme-controller" value="mytheme" />
 
             <!-- sun icon -->
             <svg
@@ -118,32 +120,16 @@
 </header>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const themeControllers = document.querySelectorAll('.theme-controller');
-    const root = document.documentElement;
-
-    const savedTheme = localStorage.getItem('theme') || 'mytheme';
-    root.setAttribute('data-theme', savedTheme);
-
-    themeControllers.forEach(controller => {
-      controller.checked = savedTheme === 'mytheme';
-    });
-
-    const setTheme = (theme) => {
-      root.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      themeControllers.forEach(controller => {
-        controller.checked = theme === 'mytheme';
-      });
-    };
-
-    themeControllers.forEach(controller => {
-      controller.addEventListener('change', (event) => {
-        const newTheme = event.target.checked ? 'mytheme' : 'secondary';
-        setTheme(newTheme);
-      });
-    });
+  document.addEventListener('DOMContentLoaded', () => { const themeControllers =
+  document.querySelectorAll('.theme-controller'); const root =
+  document.documentElement; const savedTheme = localStorage.getItem('theme') ||
+  'mytheme'; root.setAttribute('data-theme', savedTheme);
+  themeControllers.forEach(controller => { controller.checked = savedTheme ===
+  'mytheme'; }); const setTheme = (theme) => { root.setAttribute('data-theme',
+  theme); localStorage.setItem('theme', theme);
+  themeControllers.forEach(controller => { controller.checked = theme ===
+  'mytheme'; }); }; themeControllers.forEach(controller => {
+  controller.addEventListener('change', (event) => { const newTheme =
+  event.target.checked ? 'mytheme' : 'secondary'; setTheme(newTheme); }); });
   });
 </script>
-
-
