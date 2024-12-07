@@ -2,7 +2,7 @@
   <div class="navbar h-16">
     <div class="navbar-start">
       <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -64,12 +64,12 @@
       <a href="/"
         ><img
           src="/logo/altura-luxe-logo.png"
-          class="h-8 w-auto"
+          class="h-8 w-auto px-1"
           alt="Logo"
         /></a
       >
     </div>
-    <div class="navbar-center hidden lg:flex">
+    <div class="navbar-center hidden md:flex">
       <ul class="menu menu-horizontal px-1 flex items-center">
         <li>
           <a href="/">Inicio</a>
@@ -120,16 +120,29 @@
 </header>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => { const themeControllers =
-  document.querySelectorAll('.theme-controller'); const root =
-  document.documentElement; const savedTheme = localStorage.getItem('theme') ||
-  'mytheme'; root.setAttribute('data-theme', savedTheme);
-  themeControllers.forEach(controller => { controller.checked = savedTheme ===
-  'mytheme'; }); const setTheme = (theme) => { root.setAttribute('data-theme',
-  theme); localStorage.setItem('theme', theme);
-  themeControllers.forEach(controller => { controller.checked = theme ===
-  'mytheme'; }); }; themeControllers.forEach(controller => {
-  controller.addEventListener('change', (event) => { const newTheme =
-  event.target.checked ? 'mytheme' : 'secondary'; setTheme(newTheme); }); });
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeControllers = document.querySelectorAll('.theme-controller');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'mytheme';
+    root.setAttribute('data-theme', savedTheme);
+
+    themeControllers.forEach(controller => {
+      controller.checked = savedTheme === 'mytheme';
+    });
+
+    const setTheme = (theme) => {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeControllers.forEach(controller => {
+        controller.checked = theme === 'mytheme';
+      });
+    };
+
+    themeControllers.forEach(controller => {
+      controller.addEventListener('change', (event) => {
+        const newTheme = event.target.checked ? 'mytheme' : 'secondary';
+        setTheme(newTheme);
+      });
+    });
   });
 </script>
